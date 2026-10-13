@@ -6,7 +6,7 @@ from xgboost import XGBRegressor
 import os
 
 router = APIRouter(
-    prefix="",
+    prefix="/model",
     tags=["model"]
 )
 
