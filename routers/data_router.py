@@ -2,7 +2,7 @@ from fastapi import APIRouter, UploadFile, File
 import pandas as pd
 
 router = APIRouter(
-    prefix="",
+    prefix="/data",
     tags=["data"]
 )
 
