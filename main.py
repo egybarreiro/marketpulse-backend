@@ -1,6 +1,15 @@
-from webapp.app import app
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from routers.ticker_router import router as ticker_router
 
-if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+app = FastAPI(title="MarketPulse Backend")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(ticker_router)
