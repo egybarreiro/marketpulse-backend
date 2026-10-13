@@ -2,7 +2,7 @@
 from services.alpha_service import fetch_alpha_quotes
 from services.fmp_service import fetch_fmp_quotes
 
-router = APIRouter(tags=["ticker"])
+router = APIRouter(prefix="/ticker", tags=["ticker"])
 
 @router.get("/")
 async def get_ticker():
